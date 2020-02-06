@@ -42,13 +42,24 @@ public class Main {
 
 		//Task4
 		boolean result = false;
-		System.out.println();
+		var first_num =  (int)(Math.random() * 10);
+		var second_num = (int)(Math.random() * 10);
+		System.out.println("first: " + first_num + " second: " + second_num);
+		result = first_num > second_num ? true : false;
+		System.out.println("Is first number bigger than second? - " + result);
+
+		result = first_num > 0 && second_num > 0;
+		System.out.println("Are both numbers are greater than 0: " + result);
+
+		result = first_num > 5 || second_num < 5;
+		System.out.println("Is first number > 5 or second number < 5: " + result);
 
 		//Task5
 		Date date = new Date();
-		if (date.getDay() == 3) System.out.println("Today is a wednesday!");
-		else System.out.println("Today is not a wednesday");
+		if (date.getDay() == 3) System.out.println("\nToday is a wednesday!");
+		else System.out.println("\nToday is not a wednesday");
 
+		System.out.println();
 		int whileInt = 1;
 		while (whileInt < 10) {
 			System.out.println("whileInt: " + whileInt);
@@ -70,8 +81,7 @@ public class Main {
 		}
 
 		//Task6
-		StaticClass.staticInt = 2;
-		System.out.println("\nStatic int: " + StaticClass.staticInt);
+		System.out.println("\nStatic final int: " + StaticClass.staticInt);
 		System.out.println("Static method: " + StaticClass.getStaticStringMethod());
     }
 }
