@@ -34,7 +34,7 @@ public class Main {
 		int a = 10, b = 2;
 	    System.out.println("\n\na in binary: " + Integer.toBinaryString(a));
 		System.out.println("b in binary: " + Integer.toBinaryString(b));
-	    System.out.println("\na >>> b: " + Integer.toBinaryString((a >>> b)));
+	    System.out.println("a >>> b: " + Integer.toBinaryString((a >>> b)));
 		System.out.println("a <<= b: " + Integer.toBinaryString((a <<= b)));
 		System.out.println("a ^= b: " + Integer.toBinaryString((a ^= b)));
 		System.out.println("a & b: " + Integer.toBinaryString((a & b)));
@@ -56,8 +56,8 @@ public class Main {
 
 		//Task5
 		Date date = new Date();
-		if (date.getDay() == 3) System.out.println("\nToday is a wednesday!");
-		else System.out.println("\nToday is not a wednesday");
+		if (date.getDay() == 1) System.out.println("\nToday is a monday!");
+		else System.out.println("\nToday is not a monday :(");
 
 		System.out.println();
 		int whileInt = 1;

@@ -4,9 +4,12 @@ public class DDD extends CCC {
     public int x;
     private int y;
 
+    @Override
     public int getPropertyX() {
         return this.x;
     }
+
+    @Override
     public int getPropertyY() {
         return this.y;
     }
@@ -25,6 +28,7 @@ public class DDD extends CCC {
         System.out.println("---super.y in constructor = " + super.getPropertyY() + "---");
     }
 
+    @Override
     public int sum() {
         int super_sum = super.sum();
         return this.x + this.y + super_sum;
