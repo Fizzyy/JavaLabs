@@ -1,0 +1,21 @@
+<project name="ANaive" default="copy">
+    <target name="init">
+        <echo message="Building LB-11" />
+    </target>
+
+    <target name="create" depends="init">
+        <delete dir="D:\Tomcat\webapps\AS_yds\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_yds\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_yds\WEB-INF" />
+    </target>
+
+    <target name="copy" depends="create">
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-11\web.xml" todir="D:\Tomcat\webapps\AS_yds\WEB-INF" />
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-11\html\adress.html" todir="D:\Tomcat\webapps\AS_yds\html\" />
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-11\html\education.html" todir="D:\Tomcat\webapps\AS_yds\html\" />
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-11\html\index.html" todir="D:\Tomcat\webapps\AS_yds\" />
+        <copy todir="D:\Tomcat\webapps\AS_yds\images\">
+            <fileset dir="D:\Универ\3 Курс\2 семестр\Java\LB-11\images" includes="**" />
+        </copy>
+    </target>
+</project>
