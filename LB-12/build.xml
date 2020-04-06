@@ -1,0 +1,22 @@
+<project name="ANaive" default="compile">
+    <target name="init">
+        <echo message="Building LB-12" />
+    </target>
+
+    <target name="create" depends="init">
+        <delete dir="D:\Tomcat\webapps\AS_ydstw\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydstw\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydstw\WEB-INF" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydstw\WEB-INF\classes" />
+    </target>
+
+    <target name="copy" depends="create">
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-12\web\WEB-INF\web.xml" todir="D:\Tomcat\webapps\AS_ydstw\WEB-INF" />
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-12\web\index.html" todir="D:\Tomcat\webapps\AS_ydstw\" />
+    </target>
+
+    <target name="compile" depends="copy">
+        <echo message="compiling SSS" />
+        <javac srcdir="D:\Универ\3 Курс\2 семестр\Java\LB-12\src" destdir="D:\Tomcat\webapps\AS_ydstw\WEB-INF\classes" classpath="D:\Tomcat\lib\servlet-api.jar" includeAntRuntime="false" />
+    </target>
+</project>
