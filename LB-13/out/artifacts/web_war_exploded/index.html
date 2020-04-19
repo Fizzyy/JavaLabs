@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LB-13</title>
+</head>
+<body>
+    <p><a href="Sss?task=1">Forward to GET-Ggg</a></p>
+    <form action="Sss?task=2" method="post">
+        <input type="submit" value="Forward to POST-Ggg" />
+    </form>
+    <p><a href="Sss?task=3">Forward to second page</a></p>
+    <p><a href="Sss?task=4">Double forward</a>
+
+    <p style="margin-top: 30px"><a href="Sss?task=5">Redirect to Get-Ggg</a></p>
+    <p><a href="Sss?task=7">Redirect to second page</a></p>
+    <p><a href="Sss?task=8">Double redirect</a></p>
+
+    <form action="Sss" method="get">
+        <div style="margin-top: 30px">
+            <label>Name:
+                <input type="text" name="name" />
+            </label>
+        </div>
+        <div style="margin-top: 10px">
+            <label>Surname:
+                <input type="text" name="surname" />
+            </label>
+        </div>
+        <input type="hidden" value="9" name="task">
+        <input type="submit" style="margin-top: 10px" value="GET-HttpClient"/>
+    </form>
+
+    <form action="Sss" method="post">
+        <div style="margin-top: 30px">
+            <label>Name:
+                <input type="text" name="name" />
+            </label>
+        </div>
+        <div style="margin-top: 10px">
+            <label>Surname:
+                <input type="text" name="surname" />
+            </label>
+        </div>
+        <input type="hidden" value="10" name="task">
+        <div>
+            <input type="submit" style="margin-top: 10px" value="POST-HttpClient" />
+        </div>
+    </form>
+</body>
+</html>
