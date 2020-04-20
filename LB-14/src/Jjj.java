@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 
 @WebServlet(name = "Jjj", urlPatterns = "/Jjj")
 public class Jjj extends HttpServlet {
-    private final String MainUrl = "http://localhost:8082/lb14";
+    private final String MainUrl = "http://localhost:8080/AS_ydsfo";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

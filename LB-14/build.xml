@@ -1,0 +1,24 @@
+<project name="LB-14" default="compile">
+    <target name="init">
+        <echo message="Building LB-14" />
+    </target>
+
+    <target name="create" depends="init">
+        <delete dir="D:\Tomcat\webapps\AS_ydsfo\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsfo\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsfo\WEB-INF" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsfo\WEB-INF\classes" />
+    </target>
+
+    <target name="copy" depends="create">
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-14\web\WEB-INF\web.xml" todir="D:\Tomcat\webapps\AS_ydsfo\WEB-INF" />
+        <copy todir="D:\Tomcat\webapps\AS_ydsfo">
+            <fileset dir="D:\Универ\3 Курс\2 семестр\Java\LB-14\web" includes="*.jsp" />
+        </copy>
+    </target>
+
+    <target name="compile" depends="copy">
+        <echo message="compiling afternoon and Jjj" />
+        <javac srcdir="D:\Универ\3 Курс\2 семестр\Java\LB-14\src" destdir="D:\Tomcat\webapps\AS_ydsfo\WEB-INF\classes" classpath="D:\Tomcat\lib\servlet-api.jar;D:\Tomcat\lib\commons-httpclient-3.1.jar" includeAntRuntime="false" />
+    </target>
+</project>

@@ -77,7 +77,7 @@
     <%@include file="afternoon.jsp" %>
     <%@include file="evening.jsp" %>
     <p>Task 6:</p>
-    <p><%= "Calling via jsp:include = "%></p>
+    <%= "Calling via jsp:include = "%>
     <jsp:include page="night.jsp?task=6"/>
     <jsp:include page="morning.jsp?task=6"/>
     <jsp:include page="afternoon.jsp?task=6"/>
