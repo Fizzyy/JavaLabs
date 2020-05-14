@@ -1,0 +1,25 @@
+<project name="LB-14" default="compile">
+    <target name="init">
+        <echo message="Building LB-15" />
+    </target>
+
+    <target name="create" depends="init">
+        <delete dir="D:\Tomcat\webapps\AS_ydsfi\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsfi\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsfi\WEB-INF" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsfi\WEB-INF\classes" />
+    </target>
+
+    <target name="copy" depends="create">
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-15\web\WEB-INF\web.xml" todir="D:\Tomcat\webapps\AS_ydsfi\WEB-INF" />
+        <copy todir="D:\Tomcat\webapps\AS_ydsfi">
+            <fileset dir="D:\Универ\3 Курс\2 семестр\Java\LB-15\web" includes="*.jsp" />
+        </copy>
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-15\web\MyTagDesc.tld" todir="D:\Tomcat\webapps\AS_ydsfi\" />
+    </target>
+
+    <target name="compile" depends="copy">
+        <echo message="compiling tag classes" />
+        <javac srcdir="D:\Универ\3 Курс\2 семестр\Java\LB-15\src" destdir="D:\Tomcat\webapps\AS_ydsfi\WEB-INF\classes" classpath="D:\Tomcat\lib\servlet-api.jar;D:\Tomcat\lib\jsp-api.jar;" includeAntRuntime="false" />
+    </target>
+</project>
