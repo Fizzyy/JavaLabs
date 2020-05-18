@@ -1,0 +1,25 @@
+<project name="LB-16" default="compile">
+    <target name="init">
+        <echo message="Building LB-16" />
+    </target>
+
+    <target name="create" depends="init">
+        <delete dir="D:\Tomcat\webapps\AS_ydssi\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydssi\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydssi\WEB-INF" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydssi\WEB-INF\classes" />
+    </target>
+
+    <target name="copy" depends="create">
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-16-17-19\web\WEB-INF\web.xml" todir="D:\Tomcat\webapps\AS_ydssi\WEB-INF" />
+        <copy todir="D:\Tomcat\webapps\AS_ydssi">
+            <fileset dir="D:\Универ\3 Курс\2 семестр\Java\LB-16-17-19\web" includes="*.jsp" />
+        </copy>
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-16-17-19\web\secondPage.html" todir="D:\Tomcat\webapps\AS_ydssi\" />
+    </target>
+
+    <target name="compile" depends="copy">
+        <echo message="compiling tag classes" />
+        <javac srcdir="D:\Универ\3 Курс\2 семестр\Java\LB-16-17-19\src" destdir="D:\Tomcat\webapps\AS_ydssi\WEB-INF\classes" classpath="D:\Tomcat\lib\servlet-api.jar;D:\Tomcat\lib\commons-httpclient-3.1.jar;" includeAntRuntime="false" />
+    </target>
+</project>
