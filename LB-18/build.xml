@@ -1,0 +1,26 @@
+<project name="LB-18" default="compile">
+    <target name="init">
+        <echo message="Building LB-18" />
+    </target>
+
+    <target name="create" depends="init">
+        <delete dir="D:\Tomcat\webapps\AS_ydsei\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsei\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsei\WEB-INF" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsei\WEB-INF\classes" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsei\WEB-INF\lib" />
+    </target>
+
+    <target name="copy" depends="create">
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-18\web\WEB-INF\web.xml" todir="D:\Tomcat\webapps\AS_ydsei\WEB-INF" />
+        <copy todir="D:\Tomcat\webapps\AS_ydsei">
+            <fileset dir="D:\Универ\3 Курс\2 семестр\Java\LB-18\web" includes="*.jsp" />
+        </copy>
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\UsefulJars\json-simple-1.1.1.jar" todir="D:\Tomcat\webapps\AS_ydsei\WEB-INF\lib" />
+    </target>
+
+    <target name="compile" depends="copy">
+        <echo message="compiling classes" />
+        <javac srcdir="D:\Универ\3 Курс\2 семестр\Java\LB-18\src" destdir="D:\Tomcat\webapps\AS_ydsei\WEB-INF\classes" classpath="D:\Tomcat\lib\servlet-api.jar;D:\Tomcat\lib\commons-httpclient-3.1.jar;D:\Универ\3 Курс\2 семестр\Java\UsefulJars\json-simple-1.1.1.jar" includeAntRuntime="false" />
+    </target>
+</project>
