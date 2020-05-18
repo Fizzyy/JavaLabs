@@ -1,0 +1,26 @@
+<project name="LB-18" default="compile">
+    <target name="init">
+        <echo message="Building LB-18" />
+    </target>
+
+    <target name="create" depends="init">
+        <delete dir="D:\Tomcat\webapps\AS_ydstwy\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydstwy\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydstwy\WEB-INF" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydstwy\WEB-INF\classes" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydstwy\WEB-INF\lib" />
+    </target>
+
+    <target name="copy" depends="create">
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-20\web\WEB-INF\web.xml" todir="D:\Tomcat\webapps\AS_ydstwy\WEB-INF" />
+        <copy todir="D:\Tomcat\webapps\AS_ydstwy">
+            <fileset dir="D:\Универ\3 Курс\2 семестр\Java\LB-20\web" includes="*.jsp" />
+        </copy>
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\UsefulJars\ojdbc8.jar" todir="D:\Tomcat\webapps\AS_ydstwy\WEB-INF\lib" />
+    </target>
+
+    <target name="compile" depends="copy">
+        <echo message="compiling classes" />
+        <javac srcdir="D:\Универ\3 Курс\2 семестр\Java\LB-20\src" destdir="D:\Tomcat\webapps\AS_ydstwy\WEB-INF\classes" classpath="D:\Tomcat\lib\servlet-api.jar;D:\Универ\3 Курс\2 семестр\Java\UsefulJars\ojdbc8.jar" includeAntRuntime="false" />
+    </target>
+</project>
