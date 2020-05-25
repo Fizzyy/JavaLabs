@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="web:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/web_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="LB-24/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="LB-24" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="D:/Tomcat/lib/sardine-5.9.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../WebDav/commons-logging-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../WebDav/commons-codec-1.9.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../WebDav/httpcore-4.4.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../WebDav/httpclient-4.5.1.jar" />
+          <element id="library" level="project" name="com.github.lookfirst:sardine:5.7" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

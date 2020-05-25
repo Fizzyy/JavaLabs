@@ -1,0 +1,35 @@
+<project name="LB-24" default="compile">
+    <target name="init">
+        <echo message="Building LB-24" />
+    </target>
+
+    <target name="create" depends="init">
+        <delete dir="D:\Tomcat\webapps\AS_ydstf\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydstf\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydstf\WEB-INF" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydstf\WEB-INF\classes" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydstf\WEB-INF\lib" />
+    </target>
+
+    <target name="copy" depends="create">
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-24\web\WEB-INF\web.xml" todir="D:\Tomcat\webapps\AS_ydstf\WEB-INF" />
+        <copy todir="D:\Tomcat\webapps\AS_ydstf">
+            <fileset dir="D:\Универ\3 Курс\2 семестр\Java\LB-24\web" includes="*.jsp" />
+        </copy>
+        <copy todir="D:\Tomcat\webapps\AS_ydstf\WEB-INF\lib">
+            <fileset dir="D:\Универ\3 Курс\2 семестр\Java\LB-24\out\artifacts\web_war_exploded\WEB-INF\lib" includes="*.jar" />
+        </copy>
+    </target>
+
+    <target name="compile" depends="copy">
+        <echo message="compiling classes" />
+        <javac srcdir="D:\Универ\3 Курс\2 семестр\Java\LB-24\src" destdir="D:\Tomcat\webapps\AS_ydstf\WEB-INF\classes" classpath="
+        D:\Tomcat\lib\servlet-api.jar;
+        D:\Универ\3 Курс\2 семестр\Java\LB-24\out\artifacts\web_war_exploded\WEB-INF\lib\commons-codec-1.9.jar;
+        D:\Универ\3 Курс\2 семестр\Java\LB-24\out\artifacts\web_war_exploded\WEB-INF\lib\commons-logging-1.2.jar;
+        D:\Универ\3 Курс\2 семестр\Java\LB-24\out\artifacts\web_war_exploded\WEB-INF\lib\httpclient-4.5.1.jar;
+        D:\Универ\3 Курс\2 семестр\Java\LB-24\out\artifacts\web_war_exploded\WEB-INF\lib\httpcore-4.4.3.jar;
+        D:\Универ\3 Курс\2 семестр\Java\LB-24\out\artifacts\web_war_exploded\WEB-INF\lib\sardine-5.9.jar;
+        " includeAntRuntime="false" />
+    </target>
+</project>

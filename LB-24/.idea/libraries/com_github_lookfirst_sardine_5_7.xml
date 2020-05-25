@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="com.github.lookfirst:sardine:5.7" type="repository">
+    <properties maven-id="com.github.lookfirst:sardine:5.7" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/lookfirst/sardine/5.7/sardine-5.7.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.1/httpclient-4.5.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.3/httpcore-4.4.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.2/commons-logging-1.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.9/commons-codec-1.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
