@@ -1,0 +1,24 @@
+<project name="LB-23" default="compile">
+    <target name="init">
+        <echo message="Building LB-23" />
+    </target>
+
+    <target name="create" depends="init">
+        <delete dir="D:\Tomcat\webapps\AS_ydsthr\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsthr\" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsthr\WEB-INF" />
+        <mkdir dir="D:\Tomcat\webapps\AS_ydsthr\WEB-INF\classes" />
+    </target>
+
+    <target name="copy" depends="create">
+        <copy file="D:\Универ\3 Курс\2 семестр\Java\LB-23\web\WEB-INF\web.xml" todir="D:\Tomcat\webapps\AS_ydsthr\WEB-INF" />
+        <copy todir="D:\Tomcat\webapps\AS_ydsthr">
+            <fileset dir="D:\Универ\3 Курс\2 семестр\Java\LB-23\web" includes="*.jsp" />
+        </copy>
+    </target>
+
+    <target name="compile" depends="copy">
+        <echo message="compiling classes" />
+        <javac srcdir="D:\Универ\3 Курс\2 семестр\Java\LB-23\src" destdir="D:\Tomcat\webapps\AS_ydsthr\WEB-INF\classes" classpath="D:\Tomcat\lib\servlet-api.jar;D:\Tomcat\lib\commons-io-2.6.jar" includeAntRuntime="false" />
+    </target>
+</project>
